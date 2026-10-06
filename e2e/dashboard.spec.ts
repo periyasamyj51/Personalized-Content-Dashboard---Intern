@@ -1,0 +1,2 @@
+import {test,expect} from '@playwright/test';
+test('dashboard search and dark mode flow',async({page})=>{await page.goto('/');await expect(page.getByText('A smarter feed, built around')).toBeVisible();const search=page.getByLabel('Search content');await search.fill('AI agents');await expect(page.getByText('AI agents are becoming the new interface for software')).toBeVisible();await page.getByTitle('Toggle dark mode').click();await expect(page.locator('html')).toHaveClass(/dark/)});

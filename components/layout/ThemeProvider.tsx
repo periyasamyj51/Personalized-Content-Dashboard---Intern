@@ -1,0 +1,1 @@
+'use client'; import {useEffect} from 'react'; import {useAppSelector} from '@/hooks/redux'; export function ThemeProvider({children}:{children:React.ReactNode}){const dark=useAppSelector(s=>s.preferences.darkMode);useEffect(()=>{document.documentElement.classList.toggle('dark',dark)},[dark]);return <>{children}</>}

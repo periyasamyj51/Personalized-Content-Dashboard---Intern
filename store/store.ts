@@ -1,0 +1,2 @@
+import {configureStore} from '@reduxjs/toolkit'; import content from './slices/contentSlice'; import preferences from './slices/preferencesSlice'; import auth from './slices/authSlice';
+export const store=configureStore({reducer:{content,preferences,auth},middleware:g=>g({serializableCheck:false})}); export type RootState=ReturnType<typeof store.getState>; export type AppDispatch=typeof store.dispatch;
